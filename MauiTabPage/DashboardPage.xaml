@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTabPage.DashboardPage"
+             Title="DashboardPage"
+             BackgroundColor="#f8f9fa">
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   Margin="0,10">
+                <StackLayout>
+                    <Label Text="Resumo Cardíaco" 
+                           FontSize="22" 
+                           TextColor="#212529" 
+                           FontAttributes="Bold" />
+                    <Label x:Name="lblTodayDate"
+                           FontSize="14" 
+                           TextColor="#6c757d" 
+                           Margin="0,0,0,15" />
+
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+                        <!-- Batimentos Cardíacos -->
+                        <Frame Grid.Row="0" Grid.Column="0" 
+                               BackgroundColor="#f8f9fa" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Image Source="heart_rate_icon.png" 
+                                       HeightRequest="40" 
+                                       HorizontalOptions="Start" />
+                                <Label Text="Batimentos" 
+                                       FontSize="14" 
+                                       TextColor="#6c757d" 
+                                       Margin="0,5,0,0" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="72" 
+                                           FontSize="28" 
+                                           TextColor="#e63946" 
+                                           FontAttributes="Bold" />
+                                    <Label Text="BPM" 
+                                           FontSize="16" 
+                                           TextColor="#6c757d" 
+                                           VerticalOptions="End" 
+                                           Margin="5,0,0,3" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Pressão Arterial -->
+                        <Frame Grid.Row="0" Grid.Column="1" 
+                               BackgroundColor="#f8f9fa" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Image Source="blood_pressure_icon.png" 
+                                       HeightRequest="40" 
+                                       HorizontalOptions="Start" />
+                                <Label Text="Pressão Arterial" 
+                                       FontSize="14" 
+                                       TextColor="#6c757d" 
+                                       Margin="0,5,0,0" />
+                                <Label Text="120/80" 
+                                       FontSize="28" 
+                                       TextColor="#0077b6" 
+                                       FontAttributes="Bold" />
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Oxigenação -->
+                        <Frame Grid.Row="1" Grid.Column="0" 
+                               BackgroundColor="#f8f9fa" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Image Source="oxygen_icon.png" 
+                                       HeightRequest="40" 
+                                       HorizontalOptions="Start" />
+                                <Label Text="Oxigenação" 
+                                       FontSize="14" 
+                                       TextColor="#6c757d" 
+                                       Margin="0,5,0,0" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="98" 
+                                           FontSize="28" 
+                                           TextColor="#2a9d8f" 
+                                           FontAttributes="Bold" />
+                                    <Label Text="%" 
+                                           FontSize="16" 
+                                           TextColor="#6c757d" 
+                                           VerticalOptions="End" 
+                                           Margin="5,0,0,3" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Temperatura -->
+                        <Frame Grid.Row="1" Grid.Column="1" 
+                               BackgroundColor="#f8f9fa" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Image Source="temperature_icon.png" 
+                                       HeightRequest="40" 
+                                       HorizontalOptions="Start" />
+                                <Label Text="Temperatura" 
+                                       FontSize="14" 
+                                       TextColor="#6c757d" 
+                                       Margin="0,5,0,0" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="36.5" 
+                                           FontSize="28" 
+                                           TextColor="#ff9f1c" 
+                                           FontAttributes="Bold" />
+                                    <Label Text="°C" 
+                                           FontSize="16" 
+                                           TextColor="#6c757d" 
+                                           VerticalOptions="End" 
+                                           Margin="5,0,0,3" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Gráfico de Batimentos -->
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   Margin="0,10">
+                <StackLayout>
+                    <Label Text="Batimentos Cardíacos" 
+                           FontSize="20" 
+                           TextColor="#212529" 
+                           FontAttributes="Bold" />
+                    <Label Text="Últimas 24 horas" 
+                           FontSize="14" 
+                           TextColor="#6c757d" 
+                           Margin="0,0,0,15" />
+
+                    <Grid ColumnDefinitions="*,*,*" Margin="0,15,0,0">
+                        <StackLayout Grid.Column="0" HorizontalOptions="Center">
+                            <Label Text="Mínimo" 
+                                   FontSize="14" 
+                                   TextColor="#6c757d" 
+                                   HorizontalOptions="Center" />
+                            <Label Text="58 BPM" 
+                                   FontSize="16" 
+                                   TextColor="#212529" 
+                                   FontAttributes="Bold" 
+                                   HorizontalOptions="Center" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" HorizontalOptions="Center">
+                            <Label Text="Média" 
+                                   FontSize="14" 
+                                   TextColor="#6c757d" 
+                                   HorizontalOptions="Center" />
+                            <Label Text="72 BPM" 
+                                   FontSize="16" 
+                                   TextColor="#e63946" 
+                                   FontAttributes="Bold" 
+                                   HorizontalOptions="Center" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2" HorizontalOptions="Center">
+                            <Label Text="Máximo" 
+                                   FontSize="14" 
+                                   TextColor="#6c757d" 
+                                   HorizontalOptions="Center" />
+                            <Label Text="110 BPM" 
+                                   FontSize="16" 
+                                   TextColor="#212529" 
+                                   FontAttributes="Bold" 
+                                   HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Próximos Lembretes -->
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   Margin="0,10">
+                <StackLayout>
+                    <Label Text="Próximos Lembretes" 
+                           FontSize="20" 
+                           TextColor="#212529" 
+                           FontAttributes="Bold" />
+
+                    <Frame BackgroundColor="#f8f9fa" 
+                           CornerRadius="10" 
+                           HasShadow="False" 
+                           Padding="15" 
+                           Margin="0,15,0,0">
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Image Grid.Column="0" 
+                                   Source="pill_icon.png" 
+                                   HeightRequest="40" 
+                                   WidthRequest="40" 
+                                   VerticalOptions="Center" />
+
+                            <StackLayout Grid.Column="1" Margin="15,0">
+                                <Label Text="Enalapril 10mg" 
+                                       FontSize="16" 
+                                       TextColor="#212529" 
+                                       FontAttributes="Bold" />
+                                <Label Text="1 comprimido após o almoço" 
+                                       FontSize="14" 
+                                       TextColor="#6c757d" />
+                            </StackLayout>
+
+                            <Label Grid.Column="2" 
+                                   Text="13:00" 
+                                   FontSize="16" 
+                                   TextColor="#e63946" 
+                                   FontAttributes="Bold" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="#f8f9fa" 
+                           CornerRadius="10" 
+                           HasShadow="False" 
+                           Padding="15" 
+                           Margin="0,10,0,0">
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Image Grid.Column="0" 
+                                   Source="activity_icon.png" 
+                                   HeightRequest="40" 
+                                   WidthRequest="40" 
+                                   VerticalOptions="Center" />
+
+                            <StackLayout Grid.Column="1" Margin="15,0">
+                                <Label Text="Caminhada" 
+                                       FontSize="16" 
+                                       TextColor="#212529" 
+                                       FontAttributes="Bold" />
+                                <Label Text="30 minutos de atividade moderada" 
+                                       FontSize="14" 
+                                       TextColor="#6c757d" />
+                            </StackLayout>
+
+                            <Label Grid.Column="2" 
+                                   Text="17:30" 
+                                   FontSize="16" 
+                                   TextColor="#0077b6" 
+                                   FontAttributes="Bold" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

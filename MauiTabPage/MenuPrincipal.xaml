@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiTabPage"
+             x:Class="MauiTabPage.MenuPrincipal"
+             Title="Menu Principal"
+             BarBackgroundColor="#ffffff"
+             SelectedTabColor="#e63946"
+             UnselectedTabColor="#6c757d"
+             BarTextColor="#212529">
+
+    <local:DashboardPage IconImageSource="dashboard_icon.png" Title="Dashboard" />
+    <local:AtividadesPage IconImageSource="activities_icon.png" Title="Atividades" />
+    <local:SobrePage IconImageSource="about_icon.png" Title="Sobre" />
+    
+</TabbedPage>

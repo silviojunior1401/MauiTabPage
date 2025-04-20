@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTabPage.SobrePage"
+             Title="SobrePage"
+             BackgroundColor="#f8f9fa">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Image Source="heart_logo.png" 
+                   HeightRequest="120" 
+                   HorizontalOptions="Center" 
+                   Margin="0,20,0,0" />
+
+            <Label Text="CardioHealth" 
+                   FontSize="32" 
+                   TextColor="#e63946" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+            <Label Text="Versão 1.0.0" 
+                   FontSize="16" 
+                   TextColor="#6c757d" 
+                   HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   Margin="0,20,0,0">
+                <StackLayout>
+                    <Label Text="Desenvolvido por" 
+                           FontSize="18" 
+                           TextColor="#6c757d" 
+                           HorizontalOptions="Center" />
+
+                    <Label Text="Silvio Alves da Silva Junior" 
+                           FontSize="24" 
+                           TextColor="#212529" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center" 
+                           Margin="0,10,0,20" />
+
+                    <Image Source="developer_photo.png" 
+                           HeightRequest="150" 
+                           WidthRequest="150" 
+                           HorizontalOptions="Center" 
+                           Aspect="AspectFill" />
+
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   Margin="0,10,0,0">
+                <StackLayout>
+                    <Label Text="Sobre o Aplicativo" 
+                           FontSize="20" 
+                           TextColor="#212529" 
+                           FontAttributes="Bold" />
+
+                    <Label Text="O CardioHealth é um aplicativo dedicado ao monitoramento e cuidado da saúde cardíaca, desenvolvido com tecnologia .NET MAUI." 
+                           FontSize="16" 
+                           TextColor="#6c757d" 
+                           Margin="0,10,0,0" />
+
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   Margin="0,10,0,0">
+                <StackLayout>
+                    <Label Text="Contato" 
+                           FontSize="20" 
+                           TextColor="#212529" 
+                           FontAttributes="Bold" />
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="15" RowSpacing="15" Margin="0,15,0,0">
+                        <Image Grid.Row="0" Grid.Column="0" 
+                               Source="email_icon.png" 
+                               HeightRequest="24" 
+                               VerticalOptions="Center" />
+                        <Label Grid.Row="0" Grid.Column="1" 
+                               Text="silvio.silva21@fatec.sp.gov.br" 
+                               FontSize="16" 
+                               TextColor="#0077b6" 
+                               VerticalOptions="Center" />
+
+                        <Image Grid.Row="1" Grid.Column="0" 
+                               Source="github_icon.png" 
+                               HeightRequest="24" 
+                               VerticalOptions="Center" />
+                        <Label Grid.Row="1" Grid.Column="1" 
+                               Text="github.com/silviojunior1401" 
+                               FontSize="16" 
+                               TextColor="#0077b6" 
+                               VerticalOptions="Center" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="© 2025 CardioHealth. Todos os direitos reservados." 
+                   FontSize="14" 
+                   TextColor="#6c757d" 
+                   HorizontalOptions="Center" 
+                   Margin="0,20,0,30" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
